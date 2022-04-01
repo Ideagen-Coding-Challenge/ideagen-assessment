@@ -90,32 +90,15 @@ class AssessmentController extends Controller
         $strarr = str_split($request->string_arr);
         $count = 0;
 
-       $prevchar = '';
-       $prev2char = '';
+   
        foreach ( $strarr  as $key => $currchar) {
-     
-           $prevchar == $currchar;
-
            if($key > 1){
-            if($prevchar == $currchar &&  $prev2char != $currchar){
+            if($currchar == $strarr[$key-1] && $strarr[$key-2] != $currchar && $strarr[$key+1] != $currchar){
                 $count++;
                }
-           }
-           else{
-            if($prevchar == $currchar){
-                $count++;
-               }
-           }
-
-
-           $prevchar =  $currchar;
-         
-           if($key > 1){
-            $prev2char = $strarr[$key - 2];
-           }
-           
-           
+           } 
        }
+  
 
        return view('assessment.index')->with(compact('count'));
         
