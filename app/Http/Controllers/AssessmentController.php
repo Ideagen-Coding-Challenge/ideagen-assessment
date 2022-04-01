@@ -140,10 +140,14 @@ class AssessmentController extends Controller
         $newPattern = '';
         $listPattern = array();
         for ($i=0; $i < count($strarr) ; $i++) { 
-            foreach ( $strarr  as $key => $currchar) {
-     
-                $newPattern .= $currchar;
-
+            $y = $i;
+            for ($x=$i; $x < count($strarr)+$i; $x++) { 
+               
+                if($x == count($strarr)){
+                    $y = 0;
+                }
+                $newPattern .= $strarr[$y];
+                $y++;
             }
             array_push($listPattern ,  $newPattern);
             $newPattern = '';

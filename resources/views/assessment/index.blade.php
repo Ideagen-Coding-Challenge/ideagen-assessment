@@ -96,7 +96,12 @@
                 </form>
     
                 <div>
-                    {{isset($lisPattern) ? ''.$lisPattern.'' : ''}}
+                  @if (isset($listPattern))
+                  @foreach ($listPattern as $pattern)
+                      <p>{{$pattern}}</p>
+                  @endforeach
+                      
+                  @endif
                 </div>
     
                 <hr>
