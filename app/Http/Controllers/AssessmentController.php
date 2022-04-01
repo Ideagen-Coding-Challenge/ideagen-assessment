@@ -13,7 +13,8 @@ class AssessmentController extends Controller
      */
     public function index()
     {
-        dd('Hi, good luck');
+        // dd('dfgdfgdf');
+        return view('assessment.index');
     }
 
     /**
@@ -80,5 +81,92 @@ class AssessmentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function similarDoubleChar(Request $request)
+    {
+
+        $strarr = str_split($request->string_arr);
+        $count = 0;
+
+       $prevchar = '';
+       $prev2char = '';
+       foreach ( $strarr  as $key => $currchar) {
+     
+           $prevchar == $currchar;
+
+           if($key > 1){
+            if($prevchar == $currchar &&  $prev2char != $currchar){
+                $count++;
+               }
+           }
+           else{
+            if($prevchar == $currchar){
+                $count++;
+               }
+           }
+
+
+           $prevchar =  $currchar;
+         
+           if($key > 1){
+            $prev2char = $strarr[$key - 2];
+           }
+           
+           
+       }
+
+       return view('assessment.index')->with(compact('count'));
+        
+    }
+
+
+    public function vowelConsonant(Request $request)
+    {
+
+        $strarr = str_split($request->string_char);
+        $countVowel = 0;
+        $countConsonant = 0;
+
+
+        $vowels = ['a','e','i','o','u'];
+   
+      
+       foreach ( $strarr  as $key => $currchar) {
+     
+         if(in_array(strtolower($currchar), $vowels)){
+            $countVowel++;
+         }
+         else{
+            $countConsonant++;
+         }  
+           
+       }
+
+       return view('assessment.index')->with(compact('countVowel' , 'countConsonant'));
+        
+    }
+
+
+    public function integerPattern(Request $request)
+    {
+
+        $strarr = str_split($request->string_integer);
+
+        $newPattern = '';
+        $listPattern = array();
+        for ($i=0; $i < count($strarr) ; $i++) { 
+            foreach ( $strarr  as $key => $currchar) {
+     
+                $newPattern .= $currchar;
+
+            }
+            array_push($listPattern ,  $newPattern);
+            $newPattern = '';
+        }
+
+       return view('assessment.index')->with(compact('listPattern'));
+        
     }
 }

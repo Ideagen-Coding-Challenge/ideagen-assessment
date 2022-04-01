@@ -18,5 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::post('assessment/similarDoubleChar', [AssessmentController::class , 'similarDoubleChar']);
+Route::post('assessment/vowelConsonant', [AssessmentController::class , 'vowelConsonant']);
+Route::post('assessment/integerPattern', [AssessmentController::class , 'integerPattern']);
 Route::resource('assessment', AssessmentController::class);
