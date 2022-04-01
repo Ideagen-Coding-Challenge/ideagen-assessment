@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AssessmentController::class, 'index']);
 
 Route::post('assessment/similarDoubleChar', [AssessmentController::class , 'similarDoubleChar']);
 Route::post('assessment/vowelConsonant', [AssessmentController::class , 'vowelConsonant']);
