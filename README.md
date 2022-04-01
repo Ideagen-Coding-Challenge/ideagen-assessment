@@ -1,7 +1,6 @@
 
 
 
-
 ## REQUIREMENT
 During my development, i use below version to run the assessment
 - PHP 8.1.4
@@ -17,7 +16,7 @@ During my development, i use below version to run the assessment
 
 **2) run - `composer install`**
 
-**3) copy .env-example and rename to .env
+**3) copy .env-example and rename to .env**
 
 **4) You`re Good to go! Run the system in any PHP Webserver (nginx/apache)**
 
