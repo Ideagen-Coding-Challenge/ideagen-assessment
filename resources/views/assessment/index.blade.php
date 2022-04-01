@@ -139,7 +139,7 @@
     
     <p><b>Question: - 4</b> 
     There is a room with three lamps, with three switches outside. How do you find which switch matches which lamp if you can only enter the room once?</p>
-    <p>Switch on the switches one by one like in for loop.</p>
+    <p>Switch on only one switch and observe which lamp is turn on.</p>
 
             </div>
             
