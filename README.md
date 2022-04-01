@@ -1,10 +1,7 @@
 
 
-
-
-
 ## REQUIREMENT
-During my development, i use below version to run the assessment
+During my development, i use Laravel 9 and below are the version to run the assessment
 - PHP 8.1.4
 - Composer 2.3.2
 
@@ -18,5 +15,7 @@ During my development, i use below version to run the assessment
 
 **2) run - `composer install`**
 
-**3) You`re Good to go! Run the system in any PHP Webserver (nginx/apache)**
+**3) copy .env-example and rename to .env**
+
+**4) You`re Good to go! Run the system in any PHP Webserver (nginx/apache)**
 
